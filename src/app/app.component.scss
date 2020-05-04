@@ -1,0 +1,206 @@
+.example-card {
+  max-width: 1500px;
+  max-height: 1000px;
+  
+}
+.sample_container {
+  max-width: 500px;
+  margin: auto;
+  min-height: 500px;
+}
+
+/* Card Customizations */
+
+.e-custom-card {
+  position: relative;
+  margin-top: 10px;
+  overflow: visible;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: 0.2s;
+  border-width: 1px;
+  padding: 1px;
+}
+
+.e-custom-card.e-card:hover {
+  border-width: 1px;
+  padding: 1px;
+}
+
+.e-custom-card :nth-child(2) .e-card-header-title.name {
+  margin-top: 10px;
+}
+
+.sample_container p.avatar-content {
+  line-height: 20px;
+  font-family: inherit;
+}
+
+.e-custom-card .e-card-header {
+  text-align: center;
+}
+
+.e-custom-card .e-avatar {
+  font-size: 20px;
+  position: absolute;
+  top: calc(0% - 1.5em);
+  left: calc(50% - 1.5em);
+  box-shadow: 0 16px 28px -8px rgba(0, 0, 0, .36), 0 4px 15px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+}
+
+.e-card.e-custom-card :nth-child(3) {
+  padding: 12px 0px 20px 0px;
+  height: 100px;
+}
+
+.e-custom-card.e-card .e-card-header .e-card-header-caption .e-card-header-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  color: rgba(83, 101, 132, 0.65);
+  text-shadow: 0 0 0.1px;
+}
+
+.e-custom-card.e-card .e-card-header .e-card-header-caption .e-card-sub-title {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: normal;
+  color: rgba(86, 90, 97, 0.65);
+  text-shadow: 0 0 0.1px;
+}
+
+.e-custom-card.e-card .e-card-content {
+  overflow: visible;
+  width: auto;
+  margin: 0px 10px 0 10px;
+  word-spacing: 1px;
+}
+
+.avatar-content {
+  color: rgba(250, 200, 130, 0.6);
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(94, 94, 94);
+  border: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.avatar-content {
+  margin-bottom: 0;
+}
+
+.sample_container .name {
+  margin-top: 5px;
+}
+
+.highcontrast .e-custom-card.e-card .avatar-content {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.highcontrast .e-custom-card.e-card .e-card-header .e-card-header-caption .e-card-sub-title {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.highcontrast .e-custom-card.e-card .e-card-header .e-card-header-caption .e-card-header-title {
+  color: rgba(255, 255, 255, 0.84);
+}
+.example-header-image {
+  background-size: 10px;
+}
+#users{
+  font-family: "Trebuchet MS"Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  height:50% ;
+}
+h3{
+  text-align: center;
+  color: blueviolet;
+}
+tr:nth-child(even){background-color: whitesmoke;}
+tr:hover{background-color: whitesmoke;}
+th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blueviolet;
+  color:white;
+}
+.container {
+  padding: 20px;
+}
+h5 {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.btn-floating {
+  padding: 5px 10px;
+  background: #fff;
+  margin: 10px 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  align-items: center;
+  background-color: black;
+  background-image: ("assets/Sonatel.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, .45);
+  display: flex;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14pt;
+  justify-content: center;
+  text-align: center;
+}
+blockquote {
+  font-family: 'Handlee', cursive;
+  font-size: 20pt; 
+  max-width: 580px;
+}
+
+@media (max-width: 480px) {
+  blockquote {
+     font-size: 22pt;
+  }
+}
+
+small {
+  display: block;
+  overflow: hidden;
+  font-size: 16pt;
+  padding: 10px 10px;
+  text-align: right;
+  height: 1em;
+}
+.note {
+  font-size: 10pt;
+}
+.word-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: start;
+  overflow: hidden; 
+  height: 1em;
+}

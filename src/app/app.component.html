@@ -1,0 +1,489 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #222124d5;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .card svg.material-icons path {
+    fill: #888;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 40px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .card.card-small {
+    height: 16px;
+    width: 168px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(black, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: 100vh;
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  .terminal {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+  }
+
+  .terminal::before {
+    content: "\2022 \2022 \2022";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(185, 38, 230);
+    color: #c2c3c4;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 0;
+    padding: 14px 0;
+    text-indent: 4px;
+  }
+
+  .terminal pre {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    color: white;
+    padding: 0 1rem 1rem;
+    margin: 0;
+  }
+
+  .circle-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: 1s ease-out;
+  }
+
+  .circle-link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+
+
+
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  
+  <span>🎀  𝒟𝒶𝓁𝒶𝓁 𝒜𝓀 𝒥𝒶𝓂𝓂  🎀 </span>   <P>
+<br>
+    <br>
+    <mat-icon  matBadgeColor="warn">email </mat-icon>
+    <mat-icon  matBadgeColor="warn"></mat-icon>７７－２０１－５７－５１
+
+ 
+ 
+
+  
+    <div class="spacer"></div>
+    <mat-icon  matBadgeColor="warn">copyright</mat-icon><P>
+       𝐖𝐎Ｎé 
+    </P>
+
+</div>
+
+
+
+<div class="container">
+
+</div>
+
+
+<iframe src="//cdn.bannersnack.com/banners/btk86mmco/embed/index.html?userId=41035124&t=1587246411" width="190" height="100" scrolling="yes" frameborder="0" allowtransparency="true" allow="autoplay" allowfullscreen="true"></iframe>
+<hr>
+
+<hr>
+<div class="embed-responsive embed-responsive-16by9"><iframe width="640" height="390" src="https://EyeSpy360.vr-360-tour.com/e/UUsBcZm-XNU/e?initvars.autorotate.enabled=always" allowfullscreen allow="microphone; camera; gyroscope; accelerometer"></iframe>
+</div>
+<hr>
+
+<br>
+<div>
+  <blockquote>
+     <span class="quote">Woné.</span>
+  </blockquote>
+
+</div>
+<br>
+<br>
+<div class="row mb-5">
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-12">
+
+        <p class="h5 mb-4">Montagne</p>
+
+        <div class="embed-responsive embed-responsive-16by9 z-depth-1">
+          <iframe width="540" height="390" src="https://EyeSpy360.vr-360-tour.com/e/UUsBcZky8K0/e" allowfullscreen allow="microphone; camera; gyroscope; accelerometer"></iframe>
+          
+        </div>
+
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-6">
+
+        <p class="h5 mb-4">.Vue panoramique d'un paysage <button mat-button mat-stroked-button color="primary" routerLink="/suggestion">VISITER</button>
+        </p>
+
+        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+          <iframe height="390px" width="540" allowfullscreen="true" 
+          src="https://momento360.com/e/u/1dbd0a0984b9489cb418f93450dbf415?utm_campaign=embed&utm_source=other&utm_medium=other&heading=0&pitch=0&field-of-view=75">
+           </iframe>        </div>
+
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-6">
+
+        <p class="h5 mb-4">.entrepot</p>
+
+        <div class="embed-responsive embed-responsive-16by9 z-depth-2">
+            <iframe height="390px" width="540" allowfullscreen="true"  src="https://momento360.com/e/u/7bd72302013041e98a61a8c99e0c0fa8?utm_campaign=embed&utm_source=other&heading=-19.5&pitch=-0.1&field-of-view=75" style="height: 101%" allowfullscreen></iframe>
+        </div>
+
+    </div>
+    
+    <!--Grid column-->
+
+</div>
+<!--Grid row-->
+
+<!--Grid row-->
+<div class="row mb-5">
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-12">
+
+
+
+
+   
+</div>
+<p align="center"> <a href=""> <img width="400" src="assets/logo_transparent1.png"> </a> </p>
+<div class="content" role="main">
+
+  <mat-card class="example-card">
+ 
+    <mat-card-content>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <p>
+        <i><mat-icon> </mat-icon></i> 
+  
+        <br>        
+        
+        <mat-list>
+
+            <p-toast [style]="{marginTop: '80px'}"></p-toast>
+            <h3 class="first">Présentation</h3>
+            <p-tabView>
+                <p-tabPanel header="Godfather I" leftIcon="pi pi-calendar">
+                </p-tabPanel>
+                <p-tabPanel header="Godfather II" leftIcon="pi pi-inbox">
+                </p-tabPanel>
+                <p-tabPanel header="Godfather III" leftIcon="pi pi-user" rightIcon="pi pi-star">
+
+                  
+                  </p-tabPanel>
+            </p-tabView>
+            
+
+            <h1 class="section-heading pt-4">Pourquoi nous choisir?</h1>
+            <!--Section description-->
+            <mat-list-item>𝖂𝖔𝖓é 𝖊𝖘𝖙 𝖚𝖓𝖊 𝖆𝖕𝖕𝖑𝖎𝖈𝖆𝖙𝖎𝖔𝖓 𝖉𝖊 𝖗é𝖆𝖑𝖎𝖙é𝖊 𝖁𝖎𝖗𝖙𝖚𝖊𝖑𝖑𝖊 𝖉𝖊𝖘𝖙𝖎𝖓é𝖊 à  𝖔𝖋𝖋𝖗𝖎𝖗 𝖚𝖓 𝖈𝖆𝖉𝖊 𝖛𝖎𝖘𝖚𝖊𝖑 𝖈𝖔𝖒𝖕𝖑𝖊𝖙  𝖙𝖔𝖚𝖙 𝖊𝖓 𝖔𝖋𝖋𝖗𝖆𝖓𝖙 𝖚𝖓 𝖗𝖊𝖓𝖉𝖚 𝖉'𝖎𝖒𝖆𝖌𝖊 à 360 𝖉𝖊𝖌𝖗é        <mat-icon  matBadgeColor="warn">360 </mat-icon>
+              𝕰𝖈𝖔𝖓𝖔𝖒𝖎𝖘𝖊𝖗 𝖉𝖚 𝖙𝖊𝖒𝖕𝖘, 𝖗é𝖉𝖚𝖎𝖘𝖊𝖟 𝖛𝖔𝖘 𝖉é𝖕𝖑𝖆𝖈𝖊𝖒𝖊𝖓𝖙
+              <mat-icon  matBadgeColor="warn">traffic </mat-icon> 𝖙𝖔𝖚𝖙 𝖊𝖓 𝖉é𝖈𝖔𝖚𝖛𝖗𝖆𝖓𝖙 𝖉𝖎𝖛𝖊𝖗𝖘 𝖕𝖑𝖆𝖈𝖊
+              <mat-icon  matBadgeColor="warn">place </mat-icon>.
+              𝖕𝖊𝖗𝖒𝖊𝖙𝖙𝖊𝖟  à 𝖛𝖔𝖘 𝖋𝖚𝖙𝖚𝖗𝖘 𝖈𝖑𝖎𝖊𝖓𝖙𝖘
+ <mat-icon  matBadgeColor="warn">people </mat-icon> 𝖉𝖊 𝖉é𝖈𝖔𝖚𝖛𝖗𝖎𝖗 𝖑𝖊𝖘 𝖕𝖍𝖔𝖙𝖔𝖘 𝖉𝖊𝖘 𝖈𝖍𝖆𝖒𝖇𝖗𝖊𝖘 𝖊𝖙 𝖉𝖊 𝖑’é𝖙𝖆𝖇𝖑𝖎𝖘𝖘𝖊𝖒𝖊𝖓𝖙
+ <mat-icon  matBadgeColor="warn">home </mat-icon> 𝖈𝖔𝖒𝖒𝖊 𝖘’𝖎𝖑𝖘 𝖞 é𝖙𝖆𝖎𝖊𝖓𝖙, 𝖕𝖗𝖔𝖕𝖔𝖘𝖊𝖗 𝖚𝖓𝖊 𝖛𝖎𝖘𝖎𝖙𝖊 𝖛𝖎𝖗𝖙𝖚𝖊𝖑𝖑𝖊 𝖉𝖊𝖘 𝖇𝖎𝖊𝖓𝖘 à 𝖑𝖔𝖚𝖊𝖗 𝖔𝖚 à 𝖛𝖊𝖓𝖉𝖗𝖊.𝖁𝖔𝖘 𝖕𝖗𝖔𝖉𝖚𝖎𝖙𝖘 <mat-icon>shopping_cart</mat-icon>   𝖉𝖊 𝖋𝖆ç𝖔𝖓 𝖈𝖔𝖒𝖕𝖑è𝖙𝖊
+ <hr>
+              .</mat-list-item>
+              <div class="row pb-3">
+                <div class="col-2 col-md-1">
+                    <i class="fa fa-bank blue-text"></i>
+                </div>
+            
+            </div>
+            <div class="row pb-3">
+              <div class="col-2 col-md-1">
+                  <i class="fa fa-code blue-text"></i>
+              </div>
+              <div class="col-10">
+                  <h5 class="feature-title">Technology</h5>
+                  <p class="grey-text">. 𝕱𝖆𝖎𝖙𝖊𝖘 𝖚𝖓𝖊 𝖗é𝖊𝖑𝖑𝖊 𝖎𝖉é𝖊 𝖉’𝖚𝖓 𝖕𝖗𝖔𝖉𝖚𝖎𝖙 𝖘𝖚𝖗 𝖇𝖆𝖘𝖊 𝖉’𝖚𝖓𝖊 𝖘𝖎𝖒𝖕𝖑𝖊 𝖕𝖍𝖔𝖙𝖔 2𝕯
+                    ?</p>
+              </div>
+          </div>
+          <div class="row pb-3">
+            <div class="col-2 col-md-1">
+                <i class="fa fa-money blue-text"></i>
+            </div>
+            <div class="col-10">
+                <h5 class="feature-title">𝐹𝒾𝓃𝒶𝓃𝒸𝑒
+                </h5>
+                <p class="grey-text">.𝔓𝔬𝔲𝔯 𝔩𝔢 𝔠𝔩𝔦𝔢𝔫𝔱: 𝔲𝔫𝔢 𝔦𝔪𝔞𝔤𝔢 360° 𝔭𝔢𝔯𝔪𝔢𝔱 𝔡’é𝔩𝔦𝔪𝔦𝔫𝔢𝔯 𝔡𝔢𝔰 𝔭𝔯𝔬𝔡𝔲𝔦𝔱𝔰 𝔮𝔲𝔦 𝔫𝔢 𝔩’𝔦𝔫𝔱é𝔯𝔢𝔰𝔰𝔢𝔫𝔱 𝔭𝔞𝔰, 𝔰𝔞𝔫𝔰 𝔡𝔢𝔳𝔬𝔦𝔯 𝔰𝔢 𝔡é𝔭𝔩𝔞𝔠𝔢𝔯. <br>
+                   <br><h5>𝐻ô𝓉𝑒𝓁𝓈 𝑒𝓉 𝒽é𝒷𝑒𝓇𝑔𝑒𝓂𝑒𝓃𝓉𝓈
+                    :</h5> ℙ𝕖𝕣𝕞𝕖𝕥𝕥𝕖𝕫 à 𝕧𝕠𝕤 𝕗𝕦𝕥𝕦𝕣𝕤 𝕔𝕝𝕚𝕖𝕟𝕥𝕤 𝕕𝕖 𝕕é𝕔𝕠𝕦𝕧𝕣𝕚𝕣 𝕝𝕖𝕤 𝕡𝕙𝕠𝕥𝕠𝕤 𝕕𝕖𝕤 𝕔𝕙𝕒𝕞𝕓𝕣𝕖𝕤 𝕖𝕥 𝕕𝕖 𝕝’é𝕥𝕒𝕓𝕝𝕚𝕤𝕤𝕖𝕞𝕖𝕟𝕥 𝕔𝕠𝕞𝕞𝕖 𝕤’𝕚𝕝𝕤 𝕪 é𝕥𝕒𝕚𝕖𝕟𝕥.
+                    𝕌𝕟 𝕧𝕣𝕒𝕚 𝕡𝕝𝕦𝕤 𝕡𝕠𝕦𝕣 𝕣𝕒𝕤𝕤𝕦𝕣𝕖𝕣 𝕝𝕖𝕤 𝕔𝕠𝕟𝕤𝕠𝕞𝕞𝕒𝕥𝕖𝕦𝕣𝕤 𝕒𝕦 𝕞𝕠𝕞𝕖𝕟𝕥 𝕕𝕖 𝕔𝕙𝕠𝕚𝕤𝕚𝕣 𝕝𝕖𝕦𝕣 𝕗𝕦𝕥𝕦𝕣 𝕤é𝕛𝕠𝕦𝕣.</p>
+                <br>
+                <br>
+               <h5>𝐵𝑜𝓊𝓉𝒾𝓆𝓊𝑒
+              </h5>  𝖕𝖗é𝖘𝖊𝖓𝖙𝖊𝖗 𝖛𝖔𝖘 𝖕𝖗𝖔𝖉𝖚𝖎𝖙𝖘 𝖉𝖊 𝖋𝖆ç𝖔𝖓 𝖈𝖔𝖒𝖕𝖑è𝖙𝖊, 𝖑𝖆 𝖕𝖗é𝖘𝖊𝖓𝖙𝖆𝖙𝖎𝖔𝖓 𝖉’𝖚𝖓𝖊 𝖇𝖔𝖚𝖙𝖎𝖖𝖚𝖊 𝖔𝖚 𝖉’𝖚𝖓 𝖒𝖆𝖌𝖆𝖘𝖎𝖓 𝖕𝖊𝖗𝖒𝖊𝖙 𝖉𝖊 𝖗𝖆𝖘𝖘𝖚𝖗𝖊𝖗 𝖑𝖊 𝖈𝖑𝖎𝖊𝖓𝖙 
+              𝖑𝖔𝖗𝖘𝖖𝖚’𝖎𝖑 𝖈𝖍𝖊𝖗𝖈𝖍𝖊 𝖛𝖔𝖙𝖗𝖊 é𝖙𝖆𝖇𝖑𝖎𝖘𝖘𝖊𝖒𝖊𝖓𝖙 𝖘𝖚𝖗 𝕴𝖓𝖙𝖊𝖗𝖓𝖊𝖙 𝖊𝖙 𝖕𝖊𝖚𝖙 𝖑’𝖎𝖓𝖈𝖎𝖙𝖊𝖗 à 𝖛𝖊𝖓𝖎𝖗 𝖛𝖎𝖘𝖎𝖙𝖊𝖗 𝖛𝖔𝖙𝖗𝖊 𝖒𝖆𝖌𝖆𝖘𝖎𝖓.
+               <h5>𝓅𝓇𝑜𝒻𝑒𝓈𝓈𝒾𝑜𝓃𝓃𝑒𝓁𝓈 𝒹𝑒 𝓁’𝒶𝓊𝓉𝑜𝓂𝑜𝒷𝒾𝓁𝑒
+              </h5> 𝕡𝕣é𝕤𝕖𝕟𝕥𝕖𝕣 𝕝𝕖𝕤 𝕧𝕠𝕚𝕥𝕦𝕣𝕖𝕤 à 𝟛𝟞𝟘°, 𝕖𝕩𝕥é𝕣𝕚𝕖𝕦𝕣 𝕖𝕥 𝕚𝕟𝕥é𝕣𝕚𝕖𝕦𝕣, 𝕖𝕤𝕥 𝕚𝕕é𝕒𝕝 𝕡𝕠𝕦𝕣 𝕤𝕖 𝕗𝕒𝕚𝕣𝕖 𝕦𝕟𝕖 𝕚𝕕é𝕖 𝕣é𝕖𝕝𝕝𝕖 𝕕𝕖 𝕝’𝕒𝕡𝕡𝕒𝕣𝕖𝕟𝕔𝕖 𝕕𝕦 𝕧é𝕙𝕚𝕔𝕦𝕝𝕖.
+             <br>
+             <br>
+             <h5> 𝑅𝑒𝓈𝓉𝒶𝓊𝓇𝒶𝓉𝒾𝑜𝓃
+            </h5> 𝕡𝕣é𝕤𝕖𝕟𝕥𝕖𝕣 𝕤𝕠𝕟 𝕣𝕖𝕤𝕥𝕒𝕦𝕣𝕒𝕟𝕥 𝕠𝕦 𝕖𝕟𝕔𝕠𝕣𝕖 𝕤𝕖𝕤 𝕔𝕦𝕚𝕤𝕚𝕟𝕖𝕤 𝕡𝕠𝕦𝕣 𝕞𝕠𝕟𝕥𝕣𝕖𝕣 𝕝𝕖𝕤 𝕝𝕚𝕖𝕦𝕩, 𝕞𝕒𝕚𝕤 𝕒𝕦𝕤𝕤𝕚 𝕝’𝕒𝕞𝕓𝕚𝕒𝕟𝕔𝕖 𝕠𝕦 𝕝𝕖 𝕗𝕠𝕟𝕔𝕥𝕚𝕠𝕟𝕟𝕖𝕞𝕖𝕟𝕥 𝕕𝕖 𝕝’é𝕥𝕒𝕓𝕝𝕚𝕤𝕤𝕖𝕞𝕖𝕟𝕥 𝕖𝕥 𝕒𝕥𝕥𝕚𝕤𝕖𝕣 𝕝𝕒 𝕔𝕦𝕣𝕚𝕠𝕤𝕚𝕥é 𝕕𝕖 𝕤𝕖𝕤 𝕔𝕝𝕚𝕖𝕟𝕥𝕤 𝕡𝕠𝕥𝕖𝕟𝕥𝕚𝕖𝕝𝕤.
+              </div>
+              
+        </div>
+  
+         
+            <hr>
+           
+          
+          
+            <div class="foo">
+
+              <span class="letter" data-letter="W">W</span>
+              <span class="letter" data-letter="O">O</span>
+                         <span class="letter" data-letter="N">N</span>
+              <span class="letter" data-letter="E">E</span>
+          
+            </div>
+<hr>
+
+        </mat-list>
+    
+      </p>
+    </mat-card-content>
+
+  </mat-card>
+  
+  <hr>
+  
+  <hr>
+  <hr>
+ 
+
+ <hr>
+ 
+
+     
+
+
+
+ <div id="generic_price_table">   
+          
+    <footer>
+        <a class="bottom_btn" href="#">&copy; 🎀  𝒯𝒽𝑒🍩𝒹♡𝓇𝑒  🎀 </a>
+    </footer>
+</div>
+<router-outlet></router-outlet>
